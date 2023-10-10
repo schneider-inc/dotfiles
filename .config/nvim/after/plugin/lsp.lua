@@ -39,5 +39,5 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
 	-- Replace the language servers listed here
 	-- with the ones you want to install
-	ensure_installed = {'tsserver', 'rust_analyzer', 'clangd', 'csharp_ls', 'cssls', 'cssmodules_ls', 'unocss', 'clojure_lsp', 'eslint', 'elixirls', 'elmls', 'emmet_ls', 'emmet_language_server', 'golangci_lint_ls', 'gopls', 'graphql', 'html', 'hls', 'jsonls', 'biome', 'jdtls', 'java_language_server', 'quick_lint_js', 'vtsls', 'julials', 'kotlin_language_server', 'ltex', 'texlab', 'lua_ls', 'marksman', 'prosemd_lsp', 'remark_ls', 'vale_ls', 'zk', 'nil_ls', 'rnix', 'ocamllsp', 'jedi_language_server', 'pyre', 'pyright', 'pylyzer', 'sourcery', 'pylsp', 'ruff_lsp', 'r_language_server', 'vimls', 'zls'}
+	ensure_installed = {"pylsp", "marksman", "ltex", "rust_analyzer", "zls", "arduino_language_server", "lua_ls"}
 })

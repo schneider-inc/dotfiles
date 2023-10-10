@@ -1,4 +1,4 @@
 require("z3ta.remap")
-require("z3ta.packer")
+require("z3ta.options")
 
 vim.cmd[[colorscheme tokyonight]]
