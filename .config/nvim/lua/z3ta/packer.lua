@@ -10,9 +10,6 @@ return require('packer').startup(function(use)
   		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	use {
-		'folke/tokyonight.nvim'
-	}
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('nvim-treesitter/playground')
@@ -39,4 +36,5 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
         }
     }
+    use { "catppuccin/nvim", as = "catppuccin" }
 end)
