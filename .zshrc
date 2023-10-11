@@ -81,6 +81,14 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+    thefuck
+    fd
+    fzf
+    autojump
+    copyfile
+    copybuffer
+    dirhistory
+    history
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -116,3 +124,5 @@ source $ZSH/oh-my-zsh.sh
 source /Users/schneuler/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval $(thefuck --alias)
+
+[ -f "/Users/schneuler/.ghcup/env" ] && source "/Users/schneuler/.ghcup/env" # ghcup-env
