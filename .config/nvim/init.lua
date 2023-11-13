@@ -1,1 +1,1 @@
-require("z3ta")
+require("z3ta.core")
