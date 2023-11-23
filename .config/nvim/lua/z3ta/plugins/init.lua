@@ -12,7 +12,16 @@ return {
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
-                ensure_installed = { "python", "cpp", "lua", "javascript", "typescript", "c", "vim", "haskell", "elm"}
+                ensure_installed = { "python", "cpp", "lua", "javascript", "typescript", "c", "vim", "haskell", "elm"},
+                sync_install = false,
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = true,
+                },
+                rainbow = {
+                    enable = true,
+                    extended_mode = true,
+                },
             })
         end
     },
@@ -21,23 +30,27 @@ return {
     "tpope/vim-fugitive",
     "mrcjkb/haskell-tools.nvim",
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
+        "catppuccin/nvim",
+        name = "catppuccin",
         priority = 1000,
-        opts = {},
-	config = function()
-		require("tokyonight").setup {
-			style = "night"
-		}
-		vim.cmd([[colorscheme tokyonight]])
---        vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
---        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-	end
+        config = function()
+            require("catppuccin").setup({
+                flavour = "mocha",
+            })
+            vim.cmd.colorscheme "catppuccin"
+        end,
     },
     {
         "terrortylor/nvim-comment",
         config = function()
             require("nvim_comment").setup()
         end,
-    }
+    },
+    {
+        "rust-lang/rust.vim",
+        ft = "rust",
+        init = function()
+            vim.g.rustfmt_autosave = 1
+        end
+    },
 }
