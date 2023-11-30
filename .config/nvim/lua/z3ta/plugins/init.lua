@@ -18,10 +18,6 @@ return {
                     enable = true,
                     additional_vim_regex_highlighting = true,
                 },
-                rainbow = {
-                    enable = true,
-                    extended_mode = true,
-                },
             })
         end
     },
@@ -36,6 +32,12 @@ return {
         config = function()
             require("catppuccin").setup({
                 flavour = "mocha",
+                transparent_background = true,
+                custom_highlights = function(colors)
+                    return {
+                        LineNr = { fg = colors.flamingo },
+                    }
+                end,
             })
             vim.cmd.colorscheme "catppuccin"
         end,
