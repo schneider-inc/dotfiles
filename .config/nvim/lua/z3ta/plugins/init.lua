@@ -31,10 +31,11 @@ return {
         priority = 1000,
         config = function()
             require("catppuccin").setup({
-                flavour = "mocha",
+                flavour = "frappe",
                 transparent_background = true,
                 custom_highlights = function(colors)
                     return {
+                        Comments = { fg = colors.flamingo },
                         LineNr = { fg = colors.flamingo },
                     }
                 end,
@@ -55,4 +56,44 @@ return {
             vim.g.rustfmt_autosave = 1
         end
     },
+    {
+        "ibhagwan/fzf-lua",
+        -- optional for icon support
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            -- calling `setup` is optional for customization
+            require("fzf-lua").setup({})
+        end
+    },
+    {
+        'glacambre/firenvim',
+
+        -- Lazy load firenvim
+        -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
+        lazy = not vim.g.started_by_firenvim,
+        build = function()
+            vim.fn["firenvim#install"](0)
+        end
+    },
+    {'romgrk/barbar.nvim',
+        dependencies = {
+            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+        },
+        init = function() vim.g.barbar_auto_setup = false end,
+        opts = {
+          -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+          -- animation = true,
+          -- insert_at_start = true,
+          -- …etc.
+        },
+        version = '^1.0.0', -- optional: only update when a new 1.x version is released
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        init = function()
+            require('lualine').setup()
+        end,
+   },
 }
